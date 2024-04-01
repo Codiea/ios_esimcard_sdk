@@ -5,27 +5,27 @@ public struct PackagesResponseModel: Codable {
     let meta: Meta?
     let data: [PackagesModel]?
     
-    internal struct Meta: Codable {
+    public struct Meta: Codable {
         let total, perPage, currentPage, lastPage: Int?
     }
     
-    internal enum DataUnit: String, Codable {
+    public enum DataUnit: String, Codable {
         case gb = "GB"
     }
     
-    internal enum PackageValidityUnit: String, Codable {
+    public enum PackageValidityUnit: String, Codable {
         case day = "Day"
     }
     
-    internal enum VoiceUnit: String, Codable {
+    public enum VoiceUnit: String, Codable {
         case minutes = "Minutes"
     }
     
-    internal enum PackageType: String, Codable {
+    public enum PackageType: String, Codable {
         case dataOnly = "DATA-ONLY"
     }
     
-    internal struct PackagesModel: Codable {
+    public struct PackagesModel: Codable {
         let id, name, price: String?
         let dataQuantity: Double?
         let dataUnit: DataUnit?
