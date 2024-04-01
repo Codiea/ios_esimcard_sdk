@@ -1,11 +1,11 @@
 import Foundation
 
-enum ApiResult<T,Error>{
+public enum ApiResult<T,Error>{
     case success(T)
     case failure(Error)
 }
 
-enum ApiError: Error {
+public enum ApiError: Error {
     case custom(description: String, comment: String? = nil)
     case sdkNotInitialized(comment: String? = nil)
     
@@ -20,7 +20,7 @@ enum ApiError: Error {
     case invalidUrl(comment: String? = nil)
 }
 
-extension ApiError: LocalizedError {
+extension  ApiError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .custom(let description,let comment):
@@ -61,7 +61,7 @@ enum ApiRequestType{
     case delete
 }
 
-enum EnumPackageType{
+public enum EnumPackageType{
     case dataOnly
     case dataVoiceSms
 }

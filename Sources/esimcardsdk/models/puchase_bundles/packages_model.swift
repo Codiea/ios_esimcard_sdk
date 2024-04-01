@@ -1,6 +1,6 @@
 import Foundation
 
-struct PackagesResponseModel: Codable {
+public struct PackagesResponseModel: Codable {
     let status: Bool?
     let meta: Meta?
     let data: [PackagesModel]?

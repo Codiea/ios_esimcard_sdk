@@ -2,7 +2,7 @@ import Foundation
 
 public class EsimCardSDK{
     
-    static let shared = EsimCardSDK()
+    public static let shared = EsimCardSDK()
     
     private var appConfigDone: Bool = false
     private var newApiUrl: String?
@@ -14,7 +14,7 @@ public class EsimCardSDK{
     // MARK: this function is must before using sdk
     
     
-    func config(token tok: String, completion: @escaping (Error?) -> Void) {
+    public func config(token tok: String, completion: @escaping (Error?) -> Void) {
         
         // MARK: if token is already set and has same value, that means sdk is already initialized, and the user is calling config function again.
         
@@ -112,7 +112,7 @@ public class EsimCardSDK{
     // MARK: Purchase Bundles Functions
     
     
-    func fetchPackages(_ token: String, page: String = "1", packageType: EnumPackageType, completion: @escaping (PackagesResponseModel?, Error?) -> Void) {
+    public func fetchPackages(_ token: String, page: String = "1", packageType: EnumPackageType, completion: @escaping (PackagesResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
