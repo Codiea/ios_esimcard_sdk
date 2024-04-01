@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'esimcardsdk'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'short discription'
   s.homepage         = 'https://github.com/Codiea/ios_esimcard_sdk.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
