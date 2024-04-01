@@ -68,7 +68,7 @@ public enum EnumPackageType{
 
 struct MyStyle{
     static func printm(_ val: Any){
-        print(val)
+       // print(val)
     }
 }
 
