@@ -1,19 +1,19 @@
 import Foundation
 
-struct MyBundlesResponseModel: Codable {
-    let status: Bool?
-    let meta: Meta?
-    let data: [Datum]?
+public struct MyBundlesResponseModel: Codable {
+    public let status: Bool?
+    public let meta: Meta?
+    public let data: [Datum]?
     
-    internal struct Datum: Codable {
-        let id, packageTypeID, simID, package: String?
-        let initialDataQuantity: Double?
-        let initialDataUnit: String?
-        let remDataQuantity: Double?
-        let remDataUnit, dateCreated, dateActivated, dateExpiry: String?
-        let activated: Bool?
-        let status: String?
-        let sim: Sim?
+    public struct Datum: Codable {
+        public let id, packageTypeID, simID, package: String?
+        public let initialDataQuantity: Double?
+        public let initialDataUnit: String?
+        public let remDataQuantity: Double?
+        public let remDataUnit, dateCreated, dateActivated, dateExpiry: String?
+        public let activated: Bool?
+        public let status: String?
+        public let sim: Sim?
         
         enum CodingKeys: String, CodingKey {
             case id
@@ -31,11 +31,11 @@ struct MyBundlesResponseModel: Codable {
         }
     }
     
-    internal struct Sim: Codable {
-        let id: Int?
-        let qrCodeText, smdpAddress, matchingID, createdAt: String?
-        let lastBundle, status: String?
-        let totalBundles: Int?
+    public struct Sim: Codable {
+        public let id: Int?
+        public let qrCodeText, smdpAddress, matchingID, createdAt: String?
+        public let lastBundle, status: String?
+        public let totalBundles: Int?
         
         enum CodingKeys: String, CodingKey {
             case id
@@ -49,8 +49,8 @@ struct MyBundlesResponseModel: Codable {
         }
     }
     
-    internal struct Meta: Codable {
-        let total, perPage, currentPage, lastPage: Int?
+    public struct Meta: Codable {
+        public let total, perPage, currentPage, lastPage: Int?
     }
     
 }

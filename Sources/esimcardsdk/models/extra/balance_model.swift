@@ -1,6 +1,6 @@
 import Foundation
 
-struct BalanceResponseModel: Codable {
-    let status: Bool?
-    let balance: Double?
+public struct BalanceResponseModel: Codable {
+    public let status: Bool?
+    public let balance: Double?
 }

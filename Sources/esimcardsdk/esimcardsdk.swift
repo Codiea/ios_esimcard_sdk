@@ -121,7 +121,7 @@ public class EsimCardSDK{
         PurchaseBundles().fetchPackages(newApiUrl: self.newApiUrl!, token: token, page: page, packageType: packageType, completion: completion)
     }
     
-    func fetchPricing(_ token: String, completion: @escaping (PricingResponseModel?, Error?) -> Void) {
+    public func fetchPricing(_ token: String, completion: @escaping (PricingResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
@@ -130,7 +130,7 @@ public class EsimCardSDK{
         PurchaseBundles().fetchPackagePricing(newApiUrl: self.newApiUrl!, token: token, completion: completion)
     }
     
-    func fetchCountries(_ token: String, completion: @escaping (CountriesResponseModel?, Error?) -> Void) {
+    public func fetchCountries(_ token: String, completion: @escaping (CountriesResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
@@ -139,16 +139,16 @@ public class EsimCardSDK{
         PurchaseBundles().fetchCountries(newApiUrl: self.newApiUrl!, token: token, completion: completion)
     }
     
-    func fetchPackagesByCountry(_ token: String, countryID: String, completion: @escaping (PackagesByCountryResponseModel?, Error?) -> Void) {
+    public func fetchPackagesByCountry(_ token: String, page: String = "1", countryID: String, completion: @escaping (PackagesByCountryResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
         }
         
-        PurchaseBundles().fetchPackagesByCountry(newApiUrl: self.newApiUrl!, token: token, countryID: countryID, completion: completion)
+        PurchaseBundles().fetchPackagesByCountry(newApiUrl: self.newApiUrl!, token: token, page:page, countryID: countryID, completion: completion)
     }
     
-    func fetchContinent(_ token: String, completion: @escaping (ContinentsResponseModel?, Error?) -> Void) {
+    public func fetchContinent(_ token: String, completion: @escaping (ContinentsResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
@@ -157,30 +157,30 @@ public class EsimCardSDK{
         PurchaseBundles().fetchContinent(newApiUrl: self.newApiUrl!, token: token, completion: completion)
     }
     
-    func fetchPackagesByContinent(_ token: String, continentID: String, completion: @escaping (PackagesByContinentResponseModel?, Error?) -> Void) {
+    public func fetchPackagesByContinent(_ token: String, page: String = "1", continentID: String, completion: @escaping (PackagesByContinentResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
         }
         
-        PurchaseBundles().fetchPackagesByContinent(newApiUrl: self.newApiUrl!, token: token, continentID: continentID, completion: completion)
+        PurchaseBundles().fetchPackagesByContinent(newApiUrl: self.newApiUrl!, token: token, page:page, continentID: continentID, completion: completion)
     }
     
-    func fetchGlobalPackages(_ token: String, completion: @escaping (GlobalPackagesResponseModel?, Error?) -> Void) {
+    public func fetchGlobalPackages(_ token: String, page: String = "1", completion: @escaping (GlobalPackagesResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
         }
         
-        PurchaseBundles().fetchGlobalPackages(newApiUrl: self.newApiUrl!, token: token, completion: completion)
+        PurchaseBundles().fetchGlobalPackages(newApiUrl: self.newApiUrl!, token: token, page:page, completion: completion)
     }
     
- 
+    
     
     // MARK: My Bundles Functions
     
     
-    func fetchMyBundles(_ token: String, page: String = "1", completion: @escaping (MyBundlesResponseModel?, Error?) -> Void) {
+    public func fetchMyBundles(_ token: String, page: String = "1", completion: @escaping (MyBundlesResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
@@ -189,7 +189,7 @@ public class EsimCardSDK{
         MyBundlesClass().fetchMyBundles(newApiUrl: self.newApiUrl!, token: token, page: page, completion: completion)
     }
     
-    func fetchMyBundleByID(_ token: String, id: String, completion: @escaping (MyBundlesByIDResponseModel?, Error?) -> Void) {
+    public func fetchMyBundleByID(_ token: String, id: String, completion: @escaping (MyBundlesByIDResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
@@ -198,7 +198,7 @@ public class EsimCardSDK{
         MyBundlesClass().fetchMyBundleByID(newApiUrl: self.newApiUrl!, token: token, id: id, completion: completion)
     }
     //10
-    func fetchMyEsims(_ token: String, page: String = "1", completion: @escaping (MyEsimsResponseModel?, Error?) -> Void) {
+    public func fetchMyEsims(_ token: String, page: String = "1", completion: @escaping (MyEsimsResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
@@ -207,7 +207,7 @@ public class EsimCardSDK{
         MyBundlesClass().fetchMyEsims(newApiUrl: self.newApiUrl!, token: token, page: page, completion: completion)
     }
     //11
-    func fetchMyEsimByID(_ token: String, id: String, completion: @escaping (MyEsimByIDResponseModel?, Error?) -> Void) {
+    public func fetchMyEsimByID(_ token: String, id: String, completion: @escaping (MyEsimByIDResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
@@ -216,7 +216,7 @@ public class EsimCardSDK{
         MyBundlesClass().fetchMyEsimByID(newApiUrl: self.newApiUrl!, token: token, id: id, completion: completion)
     }
     //12
-    func fetchMyEsimUsageByID(_ token: String, id: String, completion: @escaping (MyEsimUsageByIDResponseModel?, Error?) -> Void) {
+    public func fetchMyEsimUsageByID(_ token: String, id: String, completion: @escaping (MyEsimUsageByIDResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
@@ -225,7 +225,7 @@ public class EsimCardSDK{
         MyBundlesClass().fetchMyEsimUsageByID(newApiUrl: self.newApiUrl!, token: token, id: id, completion: completion)
     }
     //13
-    func fetchPackageDetail(_ token: String, id: String, completion: @escaping (PackageDetailResponseModel?, Error?) -> Void) {
+    public func fetchPackageDetail(_ token: String, id: String, completion: @escaping (PackageDetailResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
@@ -238,7 +238,7 @@ public class EsimCardSDK{
     // MARK: Other Functions
     
     //14
-    func fetchBalance(_ token: String, completion: @escaping (BalanceResponseModel?, Error?) -> Void) {
+    public func fetchBalance(_ token: String, completion: @escaping (BalanceResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
@@ -248,7 +248,7 @@ public class EsimCardSDK{
     }
     
     //15
-    func fetchNetworkCoverage(_ token: String, completion: @escaping (NetworkCoverageResponseModel?, Error?) -> Void) {
+    public func fetchNetworkCoverage(_ token: String, completion: @escaping (NetworkCoverageResponseModel?, Error?) -> Void) {
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
@@ -258,7 +258,7 @@ public class EsimCardSDK{
     }
     
     //16
-    func purchaseDataOnly(token: String, packageTypeId: String, iccid: String? = nil, completion: @escaping (PurchaseDataOnlyResponseModel?, Error?) -> Void){
+    public func purchaseDataOnly(token: String, packageTypeId: String, iccid: String? = nil, completion: @escaping (PurchaseDataOnlyResponseModel?, Error?) -> Void){
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
@@ -269,7 +269,7 @@ public class EsimCardSDK{
     }
     
     //17
-    func purchaseDataVoiceSms(token: String, packageTypeId: String, imei: String, firstName: String, lastName: String, zipcode: String, state: String, city: String, address1: String, address2: String, completion: @escaping (PurchaseDataVoiceSmsResponseModel?, Error?) -> Void){
+    public func purchaseDataVoiceSms(token: String, packageTypeId: String, imei: String, firstName: String, lastName: String, zipcode: String, state: String, city: String, address1: String, address2: String, completion: @escaping (PurchaseDataVoiceSmsResponseModel?, Error?) -> Void){
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())
             return
@@ -281,7 +281,7 @@ public class EsimCardSDK{
     
     
     //18
-    func refill(token: String, amount: String, cvv: String, cardNo: String, country: String, name: String, expiryDate: String, completion: @escaping (RefillResponseModel?, Error?) -> Void){
+    public func refill(token: String, amount: String, cvv: String, cardNo: String, country: String, name: String, expiryDate: String, completion: @escaping (RefillResponseModel?, Error?) -> Void){
         
         if(appConfigDone == false){
             completion(nil, ApiError.sdkNotInitialized())

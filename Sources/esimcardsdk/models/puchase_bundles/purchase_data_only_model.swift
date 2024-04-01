@@ -1,24 +1,24 @@
 import Foundation
 
-struct PurchaseDataOnlyResponseModel: Codable {
-    let status: Bool?
-    let data: DataClass?
+public struct PurchaseDataOnlyResponseModel: Codable {
+    public let status: Bool?
+    public let data: DataClass?
     
     
-    internal struct DataClass: Codable {
-        let sim: Sim?
-        let package: Package?
+    public struct DataClass: Codable {
+        public let sim: Sim?
+        public let package: Package?
     }
 
-    internal struct Package: Codable {
-        let id, packageTypeID, simID, package: String?
-        let initialDataQuantity: Double?
-        let initialDataUnit: String?
-        let remDataQuantity: Double?
-        let remDataUnit, dateCreated, dateActivated, dateExpiry: String?
-        let activated: Bool?
-        let status: String?
-        let sim: Sim?
+    public struct Package: Codable {
+        public let id, packageTypeID, simID, package: String?
+        public let initialDataQuantity: Double?
+        public let initialDataUnit: String?
+        public let remDataQuantity: Double?
+        public let remDataUnit, dateCreated, dateActivated, dateExpiry: String?
+        public let activated: Bool?
+        public let status: String?
+        public let sim: Sim?
 
         internal enum CodingKeys: String, CodingKey {
             case id
@@ -36,11 +36,11 @@ struct PurchaseDataOnlyResponseModel: Codable {
         }
     }
 
-    internal struct Sim: Codable {
-        let id: Int
-        let qrCodeText, smdpAddress: String?
-        let matchingID, createdAt, lastBundle, status: String?
-        let totalBundles: Double?
+    public struct Sim: Codable {
+        public let id: Int
+        public let qrCodeText, smdpAddress: String?
+        public let matchingID, createdAt, lastBundle, status: String?
+        public let totalBundles: Double?
 
         enum CodingKeys: String, CodingKey {
             case id

@@ -1,15 +1,15 @@
 import Foundation
 
-struct MyEsimsResponseModel: Codable {
-    let status: Bool?
-    let meta: Meta?
-    let data: [Datum]?
+public struct MyEsimsResponseModel: Codable {
+    public let status: Bool?
+    public let meta: Meta?
+    public let data: [Datum]?
     
-    internal struct Datum: Codable {
-        let id: Int?
-        let qrCodeText, smdpAddress, matchingID, createdAt: String?
-        let lastBundle, status: String?
-        let totalBundles: Int?
+    public struct Datum: Codable {
+        public let id: Int?
+        public let qrCodeText, smdpAddress, matchingID, createdAt: String?
+        public let lastBundle, status: String?
+        public let totalBundles: Int?
         
         enum CodingKeys: String, CodingKey {
             case id
@@ -23,8 +23,8 @@ struct MyEsimsResponseModel: Codable {
         }
     }
     
-    internal struct Meta: Codable {
-        let total, perPage, currentPage, lastPage: Int?
+    public struct Meta: Codable {
+        public let total, perPage, currentPage, lastPage: Int?
     }
 }
 

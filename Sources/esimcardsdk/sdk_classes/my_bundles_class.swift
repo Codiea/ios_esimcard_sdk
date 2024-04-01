@@ -3,7 +3,11 @@ import Foundation
 class MyBundlesClass : MyBundlesProtocol{
     internal func fetchMyBundles(newApiUrl: String, token: String, page: String, completion: @escaping (MyBundlesResponseModel?, Error?) -> Void) {
         
-        commonApiService(url: ApiUrl.getMyBundlesUrl(baseURL: newApiUrl), apiMethod: ApiRequestType.get_, token:token) { result  in
+        let queryParams: [String: String] = [
+            "page": page
+        ]
+        
+        commonApiService(url: ApiUrl.getMyBundlesUrl(baseURL: newApiUrl), apiMethod: ApiRequestType.get_, token:token, queryParam: queryParams) { result  in
             switch result {
                 
             case .success(let data):
@@ -54,7 +58,11 @@ class MyBundlesClass : MyBundlesProtocol{
     
     internal func fetchMyEsims(newApiUrl: String, token: String, page: String, completion: @escaping (MyEsimsResponseModel?, Error?) -> Void) {
         
-        commonApiService(url: ApiUrl.getMyEsimsUrl(baseURL: newApiUrl), apiMethod: ApiRequestType.get_, token:token) { result  in
+        let queryParams: [String: String] = [
+            "page": page
+        ]
+        
+        commonApiService(url: ApiUrl.getMyEsimsUrl(baseURL: newApiUrl), apiMethod: ApiRequestType.get_, token:token, queryParam: queryParams) { result  in
             switch result {
                 
             case .success(let data):

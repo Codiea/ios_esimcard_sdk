@@ -1,6 +1,6 @@
 import Foundation
 
-struct RefillResponseModel: Codable {
-    let status: Bool?
-    let message: String?
+public struct RefillResponseModel: Codable {
+    public let status: Bool?
+    public let message: String?
 }

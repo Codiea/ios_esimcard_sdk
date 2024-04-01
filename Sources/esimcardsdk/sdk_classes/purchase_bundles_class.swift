@@ -83,9 +83,13 @@ class PurchaseBundles : PurchaseBundlesProtocol{
         
     }
     
-    internal func fetchPackagesByCountry(newApiUrl:String, token: String, countryID: String, completion: @escaping (PackagesByCountryResponseModel?, Error?) -> Void) {
+    internal func fetchPackagesByCountry(newApiUrl:String, token: String, page: String, countryID: String, completion: @escaping (PackagesByCountryResponseModel?, Error?) -> Void) {
         
-        commonApiService(url: ApiUrl.getPackByCountryIDUrl(baseURL: newApiUrl, id: countryID), apiMethod: ApiRequestType.get_, token:token) { result  in
+        let queryParams: [String: String] = [
+            "page": page
+        ]
+        
+        commonApiService(url: ApiUrl.getPackByCountryIDUrl(baseURL: newApiUrl, id: countryID), apiMethod: ApiRequestType.get_, token:token, queryParam: queryParams) { result  in
             switch result {
                 
             case .success(let data):
@@ -135,9 +139,13 @@ class PurchaseBundles : PurchaseBundlesProtocol{
         
     }
     
-    internal func fetchPackagesByContinent(newApiUrl:String, token: String, continentID: String, completion: @escaping (PackagesByContinentResponseModel?, Error?) -> Void) {
+    internal func fetchPackagesByContinent(newApiUrl:String, token: String, page: String, continentID: String, completion: @escaping (PackagesByContinentResponseModel?, Error?) -> Void) {
         
-        commonApiService(url: ApiUrl.getPackByContinentIDUrl(baseURL: newApiUrl, id: continentID), apiMethod: ApiRequestType.get_, token:token) { result  in
+        let queryParams: [String: String] = [
+            "page": page
+        ]
+        
+        commonApiService(url: ApiUrl.getPackByContinentIDUrl(baseURL: newApiUrl, id: continentID), apiMethod: ApiRequestType.get_, token:token, queryParam:queryParams) { result  in
             switch result {
                 
             case .success(let data):
@@ -162,9 +170,13 @@ class PurchaseBundles : PurchaseBundlesProtocol{
         
     }
     
-    internal func fetchGlobalPackages(newApiUrl:String, token: String, completion: @escaping (GlobalPackagesResponseModel?, Error?) -> Void) {
+    internal func fetchGlobalPackages(newApiUrl:String, token: String, page: String, completion: @escaping (GlobalPackagesResponseModel?, Error?) -> Void) {
         
-        commonApiService(url: ApiUrl.getGlobalPackagesUrl(baseURL: newApiUrl), apiMethod: ApiRequestType.get_, token:token) { result  in
+        let queryParams: [String: String] = [
+            "page": page
+        ]
+        
+        commonApiService(url: ApiUrl.getGlobalPackagesUrl(baseURL: newApiUrl), apiMethod: ApiRequestType.get_, token:token, queryParam:queryParams) { result  in
             switch result {
                 
             case .success(let data):

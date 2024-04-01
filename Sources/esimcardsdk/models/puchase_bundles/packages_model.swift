@@ -26,14 +26,14 @@ public struct PackagesResponseModel: Codable {
     }
     
     public struct PackagesModel: Codable {
-        public   let id, name, price: String?
-        public   let dataQuantity: Double?
-        public   let dataUnit: DataUnit?
-        public   let voiceQuantity: Double?
+        public let id, name, price: String?
+        public let dataQuantity: Double?
+        public let dataUnit: DataUnit?
+        public let voiceQuantity: Double?
         public let voiceUnit: VoiceUnit?
-        public  let smsQuantity, packageValidity: Double?
-        public   let packageValidityUnit: PackageValidityUnit?
-        public   let packageType: PackageType?
+        public let smsQuantity, packageValidity: Double?
+        public let packageValidityUnit: PackageValidityUnit?
+        public let packageType: PackageType?
         
         enum CodingKeys: String, CodingKey {
             case id, name, price

@@ -1,14 +1,14 @@
 import Foundation
 
-struct MyEsimByIDResponseModel: Codable {
-    let status: Bool?
-    let data: DataClass?
+public struct MyEsimByIDResponseModel: Codable {
+    public let status: Bool?
+    public let data: DataClass?
     
-    internal struct DataClass: Codable {
-        let sim: Sim?
-        let inUsePackages, assignedPackages, completedPackages, revokedPackages: [Package]?
-        let coverage: [Coverage]?
-        let overallUsage: OverallUsage?
+    public struct DataClass: Codable {
+        public let sim: Sim?
+        public let inUsePackages, assignedPackages, completedPackages, revokedPackages: [Package]?
+        public let coverage: [Coverage]?
+        public let overallUsage: OverallUsage?
         
         enum CodingKeys: String, CodingKey {
             case sim
@@ -21,15 +21,15 @@ struct MyEsimByIDResponseModel: Codable {
         }
     }
     
-    internal struct Package: Codable {
-        let id, packageTypeID, simID, package: String?
-        let initialDataQuantity: Double?
-        let initialDataUnit: String?
-        let remDataQuantity: Double?
-        let remDataUnit, dateCreated, dateActivated, dateExpiry: String?
-        let activated: Bool?
-        let status: String?
-        let sim: Sim?
+    public struct Package: Codable {
+        public let id, packageTypeID, simID, package: String?
+        public let initialDataQuantity: Double?
+        public let initialDataUnit: String?
+        public let remDataQuantity: Double?
+        public let remDataUnit, dateCreated, dateActivated, dateExpiry: String?
+        public let activated: Bool?
+        public let status: String?
+        public let sim: Sim?
         
         enum CodingKeys: String, CodingKey {
             case id
@@ -47,11 +47,11 @@ struct MyEsimByIDResponseModel: Codable {
         }
     }
     
-    internal struct Sim: Codable {
-        let id: Int?
-        let qrCodeText, smdpAddress, matchingID, createdAt: String?
-        let lastBundle, status: String?
-        let totalBundles: Int?
+    public struct Sim: Codable {
+        public let id: Int?
+        public let qrCodeText, smdpAddress, matchingID, createdAt: String?
+        public let lastBundle, status: String?
+        public let totalBundles: Int?
         
         enum CodingKeys: String, CodingKey {
             case id
@@ -65,12 +65,12 @@ struct MyEsimByIDResponseModel: Codable {
         }
     }
     
-    internal struct Coverage: Codable {
-        let id: Int?
-        let countryName, code, iso: String?
-        let countryImageURL: String?
-        let networkName, networkCode: String?
-        let t2G, th3G, for4G, fiv5G: Bool?
+    public struct Coverage: Codable {
+        public let id: Int?
+        public let countryName, code, iso: String?
+        public let countryImageURL: String?
+        public let networkName, networkCode: String?
+        public let t2G, th3G, for4G, fiv5G: Bool?
         
         enum CodingKeys: String, CodingKey {
             case id
@@ -86,11 +86,11 @@ struct MyEsimByIDResponseModel: Codable {
         }
     }
     
-    internal struct OverallUsage: Codable {
-        let initialDataQuantity: Double?
-        let initialDataUnit: String?
-        let remDataQuantity: Double?
-        let remDataUnit: String?
+    public struct OverallUsage: Codable {
+        public let initialDataQuantity: Double?
+        public let initialDataUnit: String?
+        public let remDataQuantity: Double?
+        public let remDataUnit: String?
         
         enum CodingKeys: String, CodingKey {
             case initialDataQuantity = "initial_data_quantity"

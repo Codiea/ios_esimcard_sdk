@@ -1,14 +1,14 @@
 import Foundation
 
-struct ContinentsResponseModel: Codable {
-    let status: Bool?
-    let data: [Datum]?
+public struct ContinentsResponseModel: Codable {
+    public let status: Bool?
+    public let data: [Datum]?
     
-    internal struct Datum: Codable {
-        let id: Int?
-        let name, code: String?
-        let createdAt, updatedAt: String?
-        let imageURL: String?
+    public struct Datum: Codable {
+        public let id: Int?
+        public let name, code: String?
+        public let createdAt, updatedAt: String?
+        public let imageURL: String?
         
         enum CodingKeys: String, CodingKey {
             case id, name, code

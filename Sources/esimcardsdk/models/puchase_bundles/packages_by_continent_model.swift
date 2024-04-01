@@ -1,18 +1,18 @@
 import Foundation
 
-struct PackagesByContinentResponseModel: Codable {
-    let status: Bool?
-    let meta: Meta?
-    let data: [Datum]?
+public struct PackagesByContinentResponseModel: Codable {
+    public let status: Bool?
+    public let meta: Meta?
+    public let data: [Datum]?
     
-    internal struct Datum: Codable {
-        let id, name, price: String?
-        let dataQuantity: Double?
-        let dataUnit: String?
-        let voiceQuantity: Double?
-        let voiceUnit: String?
-        let smsQuantity, packageValidity: Double?
-        let packageValidityUnit, packageType: String?
+    public struct Datum: Codable {
+        public let id, name, price: String?
+        public let dataQuantity: Double?
+        public let dataUnit: String?
+        public let voiceQuantity: Double?
+        public let voiceUnit: String?
+        public let smsQuantity, packageValidity: Double?
+        public let packageValidityUnit, packageType: String?
         
         enum CodingKeys: String, CodingKey {
             case id, name, price
@@ -27,8 +27,8 @@ struct PackagesByContinentResponseModel: Codable {
         }
     }
     
-    internal struct Meta: Codable {
-        let total, perPage, currentPage, lastPage: Int?
+    public struct Meta: Codable {
+        public let total, perPage, currentPage, lastPage: Int?
     }
     
 }

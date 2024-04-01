@@ -1,18 +1,18 @@
 import Foundation
 
-struct PackageDetailResponseModel: Codable {
-    let status: Bool?
-    let data: DataClass?
+public struct PackageDetailResponseModel: Codable {
+    public let status: Bool?
+    public let data: DataClass?
     
-    internal struct DataClass: Codable {
-        let id, name, price: String?
-        let dataQuantity: Double?
-        let dataUnit: String?
-        let voiceQuantity: Double?
-        let voiceUnit: String?
-        let smsQuantity, packageValidity: Double?
-        let packageValidityUnit: String?
-        let romaingCountries, countries: [Country]?
+    public struct DataClass: Codable {
+        public let id, name, price: String?
+        public let dataQuantity: Double?
+        public let dataUnit: String?
+        public let voiceQuantity: Double?
+        public let voiceUnit: String?
+        public let smsQuantity, packageValidity: Double?
+        public let packageValidityUnit: String?
+        public let romaingCountries, countries: [Country]?
         
         enum CodingKeys: String, CodingKey {
             case id, name, price
@@ -28,11 +28,11 @@ struct PackageDetailResponseModel: Codable {
         }
     }
     
-    internal struct Country: Codable {
-        let id: Int?
-        let name: String?
-        let imageURL: String?
-        let networkCoverage: [NetworkCoverage]?
+    public struct Country: Codable {
+        public let id: Int?
+        public let name: String?
+        public let imageURL: String?
+        public let networkCoverage: [NetworkCoverage]?
         
         enum CodingKeys: String, CodingKey {
             case id, name
@@ -41,9 +41,9 @@ struct PackageDetailResponseModel: Codable {
         }
     }
     
-    internal struct NetworkCoverage: Codable {
-        let networkName, networkCode: String?
-        let twoG, threeG, fourG, fiveG: Bool?
+    public struct NetworkCoverage: Codable {
+        public let networkName, networkCode: String?
+        public let twoG, threeG, fourG, fiveG: Bool?
         
         enum CodingKeys: String, CodingKey {
             case networkName = "network_name"

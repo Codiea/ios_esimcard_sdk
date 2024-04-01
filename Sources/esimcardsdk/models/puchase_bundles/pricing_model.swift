@@ -1,24 +1,24 @@
 import Foundation
 
-struct PricingResponseModel: Codable {
-    let status: Bool?
-    let data: DataClass?
+public struct PricingResponseModel: Codable {
+    public let status: Bool?
+    public let data: DataClass?
     
-    internal struct DataClass: Codable {
-        let countries: [Country]?
+    public struct DataClass: Codable {
+        public let countries: [Country]?
     }
     
-    internal struct Country: Codable {
-        let name, code: String?
-        let packages: [Package]?
+    public struct Country: Codable {
+        public let name, code: String?
+        public let packages: [Package]?
     }
     
-    internal struct Package: Codable {
-        let id, name, price: String?
-        let dataQuantity: Double?
-        let dataUnit: DataUnit?
-        let packageValidity: Double?
-        let packageValidityUnit: PackageValidityUnit?
+    public struct Package: Codable {
+        public let id, name, price: String?
+        public let dataQuantity: Double?
+        public let dataUnit: DataUnit?
+        public let packageValidity: Double?
+        public let packageValidityUnit: PackageValidityUnit?
         
         enum CodingKeys: String, CodingKey {
             case id, name, price
@@ -29,11 +29,11 @@ struct PricingResponseModel: Codable {
         }
     }
     
-    internal enum DataUnit: String, Codable {
+    public enum DataUnit: String, Codable {
         case gb = "GB"
     }
     
-    internal enum PackageValidityUnit: String, Codable {
+    public enum PackageValidityUnit: String, Codable {
         case day = "Day"
     }
     

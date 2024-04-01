@@ -1,6 +1,6 @@
 import Foundation
 
-struct PurchaseDataVoiceSmsResponseModel: Codable {
-    let status: Bool?
-    let message: String?
+public struct PurchaseDataVoiceSmsResponseModel: Codable {
+    public let status: Bool?
+    public let message: String?
 }

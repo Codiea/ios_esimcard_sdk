@@ -1,14 +1,14 @@
 import Foundation
 
-struct NetworkCoverageResponseModel: Codable {
-    let status: Bool?
-    let data: [Datum]?
+public struct NetworkCoverageResponseModel: Codable {
+    public let status: Bool?
+    public let data: [Datum]?
     
-    internal struct Datum: Codable {
-        let id: Int?
-        let name: String?
-        let imageURL: String?
-        let networkCoverage: [NetworkCoverage]?
+    public struct Datum: Codable {
+        public let id: Int?
+        public let name: String?
+        public let imageURL: String?
+        public let networkCoverage: [NetworkCoverage]?
         
         enum CodingKeys: String, CodingKey {
             case id, name
@@ -17,9 +17,9 @@ struct NetworkCoverageResponseModel: Codable {
         }
     }
     
-    internal struct NetworkCoverage: Codable {
-        let networkName, networkCode: String?
-        let twoG, threeG, fourG, fiveG: Bool?
+    public struct NetworkCoverage: Codable {
+        public let networkName, networkCode: String?
+        public let twoG, threeG, fourG, fiveG: Bool?
         
         enum CodingKeys: String, CodingKey {
             case networkName = "network_name"
