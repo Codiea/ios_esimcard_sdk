@@ -1,11 +1,10 @@
 import Foundation
 
 public struct PackagesResponseModel: Codable {
-    let status: Bool?
-    let meta: Meta?
-    let data: [PackagesModel]?
+    public let status: Bool?
+    public let meta: Meta?
+    public let data: [PackagesModel]?
     
-
 }
 
 
